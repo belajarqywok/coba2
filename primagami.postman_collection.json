@@ -1,0 +1,1266 @@
+{
+	"info": {
+		"_postman_id": "875d79ba-4b6a-4d12-befd-529e3fd82497",
+		"name": "primagami",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "passadmin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login 401",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "qwe",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "asd",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/auth/logout?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"logout"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "mentor",
+			"item": [
+				{
+					"name": "view mentor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/mentor?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"mentor"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create mentor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Fulansyah Zidane",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "08131313131313",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Jl Bambu Apus 11",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "fulan@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "mentor_id",
+									"value": "PEG000001",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/mentor?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"mentor"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create mentor 403",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Fulansyah Zidane",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "other",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "08131313131313",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Jl Bambu Apus 11",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "fulan@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "mentor_id",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/mentor?token=QWERTY",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"mentor"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "QWERTY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create mentor 422",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Fulansyah Zidane",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "other",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "08131313131313",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Jl Bambu Apus 11",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "fulan@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "mentor_id",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/branch?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"branch"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit mentor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Fulansyah Zidane Yazid",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "08131313131313",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Jl Bambu Apus 11",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "fulan@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/mentor/PEG0000001?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"mentor",
+								"PEG0000001"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit mentor 403",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Fulansyah",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "0813098763829",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Jl Bambu Apus 11",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "fulan@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/mentor/PEG0000001?token=QWERTY",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"mentor",
+								"PEG0000001"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "QWERTY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit mentor 422",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "gender",
+									"value": "other",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "0813098763829",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Jl Bambu Apus 11",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "fulan@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/mentor/PEG0000001?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"mentor",
+								"PEG0000001"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete mentor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/v1/mentor/PEG0000001?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"mentor",
+								"PEG0000001"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete mentor 401",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/v1/mentor/PEG0000001?token=QWERTY",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"mentor",
+								"PEG0000001"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "QWERTY"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1125b5fe-894f-4e75-bd37-12b9249db278",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "8de5484e-7513-44d2-a7ec-797a9f89815a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "course",
+			"item": [
+				{
+					"name": "view course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/course?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"course"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "course_code",
+									"value": "IC00001",
+									"type": "text"
+								},
+								{
+									"key": "course_name",
+									"value": "HTML For Dummies",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "ict",
+									"type": "text"
+								},
+								{
+									"key": "level",
+									"value": "basic",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/course?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"course"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create course 401",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "course_code",
+									"value": "IC00001",
+									"type": "text"
+								},
+								{
+									"key": "course_name",
+									"value": "HTML For Dummies",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "ict",
+									"type": "text"
+								},
+								{
+									"key": "level",
+									"value": "basic",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/course?token=QWERTY",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"course"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "QWERTY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create course 422",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "course_code",
+									"value": "IC00001",
+									"type": "text"
+								},
+								{
+									"key": "course_name",
+									"value": "HTML For Dummies",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "cti",
+									"type": "text"
+								},
+								{
+									"key": "level",
+									"value": "basbro",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/course?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"course"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update course",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "course_name",
+									"value": "HTML For Dummies Ver 1",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "ict",
+									"type": "text"
+								},
+								{
+									"key": "level",
+									"value": "basic",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/course/IC00001?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"course",
+								"IC00001"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update course 401",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "category",
+									"value": "ict",
+									"type": "text"
+								},
+								{
+									"key": "level",
+									"value": "basic",
+									"type": "text"
+								},
+								{
+									"key": "course_name",
+									"value": "HTML For Dummies",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/course/IC00001?token=QWERTY",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"course",
+								"IC00001"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "QWERTY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update course 422",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "category",
+									"value": "ictooo",
+									"type": "text"
+								},
+								{
+									"key": "level",
+									"value": "basic",
+									"type": "text"
+								},
+								{
+									"key": "course_name",
+									"value": "HTML For Dummies",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/course/IC00001?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"course",
+								"IC00001"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete course",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/v1/course/IC00001?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"course",
+								"IC00001"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete course 401",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/v1/course/IC00001?token=QWERTY",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"course",
+								"IC00001"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "QWERTY"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "schedule",
+			"item": [
+				{
+					"name": "view schedule",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/schedule?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"schedule"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create schedule",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "mentor_id",
+									"value": "PEG000001",
+									"type": "text"
+								},
+								{
+									"key": "course_code",
+									"value": "IC00001",
+									"type": "text"
+								},
+								{
+									"key": "dates",
+									"value": "2018-12-02",
+									"type": "text"
+								},
+								{
+									"key": "start_time",
+									"value": "08:00",
+									"type": "text"
+								},
+								{
+									"key": "end_time",
+									"value": "11:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/schedule?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"schedule"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create schedule 401",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "mentor_id",
+									"value": "PEG000001",
+									"type": "text"
+								},
+								{
+									"key": "course_code",
+									"value": "IC00001",
+									"type": "text"
+								},
+								{
+									"key": "dates",
+									"value": "2018-12-02",
+									"type": "text"
+								},
+								{
+									"key": "start_time",
+									"value": "08:00",
+									"type": "text"
+								},
+								{
+									"key": "end_time",
+									"value": "11:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/schedule?token=QWERTY",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"schedule"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "QWERTY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create schedule 422",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "mentor_id",
+									"value": "PEG001",
+									"type": "text"
+								},
+								{
+									"key": "course_code",
+									"value": "IC001",
+									"type": "text"
+								},
+								{
+									"key": "dates",
+									"value": "2018-a1-02",
+									"type": "text"
+								},
+								{
+									"key": "start_time",
+									"value": "09:00",
+									"type": "text"
+								},
+								{
+									"key": "end_time",
+									"value": "12:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/schedule?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"schedule"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create schedule 403",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "mentor_id",
+									"value": "PEG000001",
+									"type": "text"
+								},
+								{
+									"key": "course_code",
+									"value": "IC00001",
+									"type": "text"
+								},
+								{
+									"key": "dates",
+									"value": "2018-12-02",
+									"type": "text"
+								},
+								{
+									"key": "start_time",
+									"value": "08:00",
+									"type": "text"
+								},
+								{
+									"key": "end_time",
+									"value": "11:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/schedule?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"schedule"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						},
+						"description": "jadwal sudah ada yang terbentuk di start - end yang ada di studio yang sama"
+					},
+					"response": []
+				},
+				{
+					"name": "delete schedule",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/v1/schedule/1?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"schedule",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete schedule 401",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/v1/schedule/1?token=QWERTY",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"schedule",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "QWERTY"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "8e503777-a870-43e1-ac66-446af3243336",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "2df53e0c-f64e-4bc9-97b9-00383b15ce9e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "9b6a78ac-c4a3-451a-8034-fdd1ab5ab3cf",
+			"key": "url",
+			"value": "",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
